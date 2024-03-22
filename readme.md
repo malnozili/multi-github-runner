@@ -1,5 +1,12 @@
+add 
+ORGANIZATION=org name
+ACCESS_TOKEN=token
+
+ 
  docker-compose build
+
  docker-compose up --scale runner=2 -d
+
  docker-compose logs -f
 
 
