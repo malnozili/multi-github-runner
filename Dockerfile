@@ -7,11 +7,11 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 
 # update the base packages and add a non-sudo user
-RUN apt-get update -y && apt-get upgrade -y && useradd -m docker
+RUN apt-get update -y && apt-get upgrade -y 
+# && useradd -m docker
+# RUN apt-get install docker.io -y && docker --version
 
-RUN apt-get install docker.io -y && docker --version
-
-RUN usermod -aG docker docker
+# RUN usermod -aG docker docker
 # install python and the packages the your code depends on along with jq so we can parse JSON
 # add additional packages as necessary
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
